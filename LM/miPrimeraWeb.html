@@ -21,27 +21,37 @@
         }
 
         .left-menu ul{
-            margin-top: 15px;
+            margin-top: 30px;
             list-style-type: none;
         }
 
         .left-menu li{
             margin-top: 10px;
+            cursor: pointer;
         }
 
-        .left-menu footer{
+        .left-menu .logout{
             background: red;
             position: absolute;
             width: 20%;
             bottom: 0;
+            padding: 20px;
+            cursor: pointer;
+        }
+
+        .left-menu .logout:hover{
+            background: orange;
         }
 
         .close-button{
             position: absolute;
             left: 20%;
-            margin-left: -30px;
-            top: 10px;
+            margin-left: -40px;
+            top: 20px;
             cursor: pointer;
+            z-index: 1;
+            color: white;
+            font-size: 22px;
         }
 
         .main-container{
@@ -49,47 +59,128 @@
             float: left;
         }
 
-        .main-container header{
+        .main-container footer{
+            position: absolute;
+            bottom: 0;
+            background: #111;
+            width: 80%;
+            padding: 10px;
+            color: white;
+        }
 
+        h1.title{
+            font-size: 22px;
+            margin-left: 20px;
+            background: rgb(0,155,216);
+            margin: 0;
+            padding: 20px;
+            color: white;
         }
 
         .subtitle{
+            color: white;
             background: #333;
+            margin: 0;
+            padding: 10px 20px;
+        }
+
+        .section-container{
+            background: #EFEFEF;
+            width: 98%;
+            height: 13vh;
+            box-shadow: 5px 10px 8px #888888;
+            margin: 10px;
+        }
+
+        .main-icon{
+            font-size: 50px;
+            color:#111;
+            margin: 20px 30px;
+            float: left;
+            cursor: pointer;
+        }
+
+        .face-icon{
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            background: red;
+            position: absolute;
+            top: 12px;
+            right: 24px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .face-icon img{
+            width: 40px;
+            height: 40px;
         }
 
     </style>
     </head>
     <body>
+        <div class="close-button"><span class="glyphicon glyphicon-menu-hamburger"></span></div>
         <aside class="left-menu">
-            <div class="close-button"><span class="glyphicon glyphicon-menu-hamburger"></span></div>
             <ul>
                 <li><span class="glyphicon glyphicon-home"></span> Inicio</li>
                 <li><span class="glyphicon glyphicon-shopping-cart"></span> Ventas</li>
                 <li><span class="glyphicon glyphicon-credit-card"></span> Contactos</li>
-                <li><span class="glyphicon glyphicon-envelope"></span> Mensajes</li>
+                <li><span class="glyphicon glyphicon-comment"></span> Mensajes</li>
                 <li><span class="glyphicon glyphicon-trash"></span> Eliminar</li>
             </ul>
             <footer>
-                <div><span class="glyphicon glyphicon-log-out"></span>Desconectar</div>
+                <div class="logout"><span class="glyphicon glyphicon-off"></span> Desconectar</div>
             </footer>
         </aside>
         <main class="main-container">
             <header>
-                <h1>Bienvenido a mi primera web</h1>
-                <div class="subtitle"></div>
+                <div class="face-icon"><img alt="cara" src="https://images.vexels.com/media/users/3/204038/list/32171678949026310a36e6aa73536f45-web-developer-logo-design.jpg"></div>
+                <h1 class="title">Bienvenido a mi primera web</h1>
             </header>
             <section>
-                
+                <h4 class="subtitle">Inicio</h4>
+                <div class="section-container">
+                    <div class="main-icon"><span class="glyphicon glyphicon glyphicon-file"></span></div>
+                    <div class="main-icon"><span class="glyphicon glyphicon-folder-close"></span></div>
+                    <div class="main-icon"><span class="glyphicon glyphicon-folder-open"></span></div>
+                    <div class="main-icon"><span class="glyphicon glyphicon glyphicon-duplicate"></span></div>
+                </div>
             </section>
             <footer>
-                
+                (C) Todos los derechos reservados por <i>Producciones Pedro S.A.</i>
             </footer>
         </main>
-    </body>
-    <script>
-        $(".close-button").click(function(){ 
+        
+        <script>
+
+            var open = true;
+
+            $(".close-button").click(function(){ 
+                    $(".left-menu").animate({width: 'toggle'}, "fast");
+                    $(".logout").animate({width: 'toggle'}, "fast");
+                if(open){
+                    $(".logout div").css({display: 'none'});
+                    $(".close-button").animate({left: '60px'}, "fast");
+                    $(".title").animate({paddingLeft: '60px'}, "fast");
+                    $(".main-container").animate({width: '100%'}, "fast");
+                    $(".main-container footer").animate({width: '100%'}, "fast");
+                    open = false;
+                }else{
+                    $(".close-button").animate({left: '20%'}, "fast");
+                    $(".title").animate({paddingLeft: '20px'}, "fast");
+                    $(".main-container").animate({width: '80%'}, "fast");
+                    $(".main-container footer").animate({width: '80%'}, "fast");
+                    open=true;
+                }
+            });
             
-         });
-    </script>
+            $(".logout").click(function(){
+                alert("No te has conectado, como te vas a desconectar")
+            });    
+
+        </script>
+
+    </body>
 
 </html>

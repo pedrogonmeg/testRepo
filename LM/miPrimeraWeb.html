@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf−8"/>
+        <title>Mi primera web</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+
+        body{
+            background: #DDD;
+        }
+
+        .left-menu{
+            width: 20%;
+            float: left;
+            height: 97vh;
+            background: #333;
+            color: white;
+            font-size: 18px;
+        }
+
+        .left-menu ul{
+            margin-top: 15px;
+            list-style-type: none;
+        }
+
+        .left-menu li{
+            margin-top: 10px;
+        }
+
+        .left-menu footer{
+            background: red;
+            position: absolute;
+            width: 20%;
+            bottom: 0;
+        }
+
+        .close-button{
+            position: absolute;
+            left: 20%;
+            margin-left: -30px;
+            top: 10px;
+            cursor: pointer;
+        }
+
+        .main-container{
+            width: 80%;
+            float: left;
+        }
+
+        .main-container header{
+
+        }
+
+        .subtitle{
+            background: #333;
+        }
+
+    </style>
+    </head>
+    <body>
+        <aside class="left-menu">
+            <div class="close-button"><span class="glyphicon glyphicon-menu-hamburger"></span></div>
+            <ul>
+                <li><span class="glyphicon glyphicon-home"></span> Inicio</li>
+                <li><span class="glyphicon glyphicon-shopping-cart"></span> Ventas</li>
+                <li><span class="glyphicon glyphicon-credit-card"></span> Contactos</li>
+                <li><span class="glyphicon glyphicon-envelope"></span> Mensajes</li>
+                <li><span class="glyphicon glyphicon-trash"></span> Eliminar</li>
+            </ul>
+            <footer>
+                <div><span class="glyphicon glyphicon-log-out"></span>Desconectar</div>
+            </footer>
+        </aside>
+        <main class="main-container">
+            <header>
+                <h1>Bienvenido a mi primera web</h1>
+                <div class="subtitle"></div>
+            </header>
+            <section>
+                
+            </section>
+            <footer>
+                
+            </footer>
+        </main>
+    </body>
+    <script>
+        $(".close-button").click(function(){ 
+            
+         });
+    </script>
+
+</html>
